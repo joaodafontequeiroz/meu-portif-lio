@@ -1,0 +1,201 @@
+.game {
+  max-width: 44rem;
+  margin-top: 2.5rem;
+}
+
+/* ── barra de status estilo terminal ─────────────────── */
+.statusBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.8rem;
+  color: var(--text-mid);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+  padding: 0.85rem 1.25rem;
+}
+
+.prompt {
+  color: var(--accent);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.danger {
+  color: #ff6b6b;
+}
+
+/* ── tabuleiro ───────────────────────────────────────── */
+.board {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 1.75rem 1.5rem;
+}
+
+.gallows {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.8rem;
+  line-height: 1.15;
+  color: var(--text-mid);
+  white-space: pre;
+  margin: 0;
+  transition: color 0.4s ease;
+}
+
+.gallowsLost {
+  color: #ff6b6b;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+/* ── palavra ─────────────────────────────────────────── */
+.wordRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.slot {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 1.55rem;
+  height: 2.1rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border-strong);
+  transition: border-color 0.2s ease;
+}
+
+.slotOn {
+  border-color: var(--accent);
+}
+
+.slotMiss {
+  color: var(--text-dim);
+  text-decoration: line-through;
+  border-color: #ff6b6b;
+}
+
+.wordGap {
+  width: 0.9rem;
+}
+
+/* ── teclado virtual ─────────────────────────────────── */
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 0.4rem;
+}
+
+.key {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  background: var(--bg-elev);
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.key:hover:not(:disabled) {
+  color: var(--text);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.key:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.keyHit {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  opacity: 1;
+}
+
+.keyMiss {
+  color: var(--text-dim);
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+
+/* ── resultado ───────────────────────────────────────── */
+.result {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.resultLine {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+}
+
+.resultWord {
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── placar ──────────────────────────────────────────── */
+.statsLine {
+  margin-top: 1.75rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.statsHint {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--text-dim);
+  opacity: 0.7;
+}
+
+/* ── responsivo ──────────────────────────────────────── */
+@media (max-width: 720px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+  .gallows {
+    align-self: center;
+  }
+  .keyboard {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .slot {
+    width: 1.35rem;
+    height: 1.9rem;
+    font-size: 1.05rem;
+  }
+}

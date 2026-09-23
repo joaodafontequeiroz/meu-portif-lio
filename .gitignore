@@ -1,0 +1,18 @@
+# dependencies
+/node_modules
+
+# node runtime portátil usado pelo Codebuff (pode deletar)
+/.node/
+
+# next.js
+/.next/
+/out/
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+.env*
+
+# typescript
+*.tsbuildinfo

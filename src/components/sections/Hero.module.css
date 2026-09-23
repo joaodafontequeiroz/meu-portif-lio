@@ -1,0 +1,203 @@
+/* ── fundo: schema relacional abstrato ─────────────── */
+
+.scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* halo quente discreto atrás do diagrama */
+.glow {
+  position: absolute;
+  width: 34rem;
+  height: 34rem;
+  right: -8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 180, 84, 0.09) 0%,
+    transparent 65%
+  );
+}
+
+.schema {
+  position: absolute;
+  right: -6%;
+  top: 50%;
+  width: min(58vw, 700px);
+  height: auto;
+  transform: translateY(-50%);
+  opacity: 0.55;
+}
+
+/* textos e linhas dentro do SVG herdam a fonte monospace */
+.schema text {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.link {
+  stroke: var(--border-strong);
+  stroke-width: 1.25;
+  stroke-dasharray: 5 6;
+}
+
+.fk {
+  fill: var(--text-dim);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.flowDot {
+  fill: var(--accent);
+  opacity: 0.85;
+}
+
+.tableBox {
+  fill: rgba(16, 18, 22, 0.55);
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+.tableHead {
+  fill: rgba(255, 180, 84, 0.07);
+}
+
+.tableTitle {
+  fill: var(--accent);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.cell {
+  fill: var(--text-dim);
+  font-size: 9.5px;
+}
+
+.rowLine {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+.inner {
+  position: relative;
+  padding-top: var(--header-h);
+}
+
+/* animações de entrada */
+.inner > * {
+  animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.inner > *:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.inner > *:nth-child(3) {
+  animation-delay: 0.16s;
+}
+.inner > *:nth-child(4) {
+  animation-delay: 0.24s;
+}
+.inner > *:nth-child(5) {
+  animation-delay: 0.32s;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  margin-bottom: 1.75rem;
+}
+
+.kickerLine {
+  width: 2.75rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+.name {
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+
+.dot {
+  color: var(--accent);
+}
+
+.lead {
+  max-width: 34rem;
+  margin-top: 1.75rem;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: var(--text-mid);
+}
+
+.accentText {
+  color: var(--text);
+  border-bottom: 1px solid var(--accent);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.75rem;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.9rem;
+  margin-top: 4.5rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.78rem;
+}
+
+.metaMono {
+  color: var(--text-dim);
+}
+
+.metaResult {
+  color: var(--accent);
+}
+
+/* ── responsivo ─────────────────────────────────────── */
+
+@media (max-width: 960px) {
+  .schema {
+    opacity: 0.2;
+    right: -30%;
+    width: 90vw;
+  }
+  .glow {
+    right: -40%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flowDot {
+    display: none;
+  }
+  .inner > * {
+    animation: none;
+  }
+}

@@ -1,0 +1,74 @@
+.list {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.5rem;
+  padding-block: 1.9rem;
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.25s ease;
+}
+
+.item:hover {
+  background: linear-gradient(
+    90deg,
+    var(--accent-soft),
+    transparent 55%
+  );
+}
+
+.period {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  padding-top: 0.3rem;
+}
+
+.role {
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.at {
+  color: var(--accent);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-weight: 400;
+}
+
+.company {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.description {
+  margin-top: 0.65rem;
+  color: var(--text-mid);
+  font-size: 0.95rem;
+  max-width: 44rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.7rem;
+  color: var(--text-mid);
+  border: 1px solid var(--border-strong);
+  border-radius: 99px;
+  padding: 0.2rem 0.65rem;
+}
+
+@media (max-width: 680px) {
+  .item {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+}

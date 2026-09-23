@@ -1,0 +1,43 @@
+.main {
+  padding-top: calc(var(--header-h) + clamp(3.5rem, 8vw, 6rem));
+  padding-bottom: clamp(4.5rem, 9vw, 7.5rem);
+  min-height: 100svh;
+}
+
+.code {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  margin-bottom: 0.6rem;
+}
+
+.prompt {
+  color: var(--accent);
+  margin-right: 0.3rem;
+}
+
+.path {
+  color: var(--accent);
+}
+
+.error {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-bottom: 2.5rem;
+}
+
+.title {
+  font-size: clamp(4rem, 14vw, 8rem);
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+}
+
+.dot {
+  color: var(--accent);
+}
+
+.hint {
+  margin-block: 1.25rem 2.5rem;
+  color: var(--text-mid);
+}

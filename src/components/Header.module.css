@@ -1,0 +1,102 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  background: rgba(11, 12, 14, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* ── logo ─────────────────────────────────────────── */
+
+.logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.logoPrompt {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.cursor {
+  display: inline-block;
+  width: 7px;
+  height: 1.05em;
+  background: var(--accent);
+  margin-left: 2px;
+  transform: translateY(2px);
+  animation: blink 1.2s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ── nav ──────────────────────────────────────────── */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.navLink {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.8rem;
+  color: var(--text-mid);
+  transition: color 0.2s ease;
+}
+
+.navIndex {
+  color: var(--accent);
+  font-size: 0.7rem;
+  margin-right: 0.35rem;
+}
+
+.navLink:hover {
+  color: var(--text);
+}
+
+.cta {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.8rem;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 0.45rem 0.9rem;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cta:hover {
+  background: var(--accent-soft);
+  transform: translateY(-1px);
+}
+
+/* ── responsivo ───────────────────────────────────── */
+
+@media (max-width: 760px) {
+  .nav {
+    display: none;
+  }
+}

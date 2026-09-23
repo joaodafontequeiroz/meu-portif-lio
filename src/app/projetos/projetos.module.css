@@ -1,0 +1,116 @@
+.main {
+  padding-top: calc(var(--header-h) + clamp(4rem, 9vw, 7rem));
+  padding-bottom: clamp(4.5rem, 9vw, 7.5rem);
+  min-height: 100svh;
+}
+
+.kicker {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-bottom: 1.25rem;
+}
+
+.prompt {
+  color: var(--accent);
+  margin-right: 0.4rem;
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: -0.03em;
+}
+
+.dot {
+  color: var(--accent);
+}
+
+.subtitle {
+  margin-top: 0.9rem;
+  color: var(--text-mid);
+  max-width: 34rem;
+}
+
+/* ── tabela de projetos ──────────────────────────── */
+
+.table {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--border);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto auto 3rem;
+  align-items: center;
+  gap: 1.25rem;
+  padding-block: 1.4rem;
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.2s ease, padding-left 0.2s ease;
+}
+
+.row:hover {
+  background: var(--bg-soft);
+  padding-left: 0.75rem;
+}
+
+.index {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.nameCell {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.name {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+.row:hover .name {
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+.category {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  color: var(--accent);
+}
+
+.year {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: var(--text-mid);
+}
+
+.arrow {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  color: var(--text-dim);
+  text-align: right;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.row:hover .arrow {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 2.25rem 1fr 2.25rem;
+  }
+  .category,
+  .year {
+    display: none;
+  }
+}

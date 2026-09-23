@@ -1,0 +1,37 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding-block: 2.5rem;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+}
+
+.line {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.8rem;
+  color: var(--text-mid);
+}
+
+.prompt {
+  color: var(--accent);
+  margin-right: 0.35rem;
+}
+
+.name {
+  color: var(--text);
+}
+
+.meta {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.exit {
+  color: var(--text-mid);
+}

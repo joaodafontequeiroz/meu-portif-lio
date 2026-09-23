@@ -1,0 +1,157 @@
+.main {
+  padding-top: calc(var(--header-h) + clamp(3.5rem, 8vw, 6rem));
+  padding-bottom: clamp(4.5rem, 9vw, 7.5rem);
+  min-height: 100svh;
+}
+
+.breadcrumb {
+  margin-bottom: 3rem;
+}
+
+.back {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.8rem;
+  color: var(--text-mid);
+  transition: color 0.2s ease;
+}
+
+.backPrompt {
+  margin-right: 0.4rem;
+  color: var(--accent);
+}
+
+.back:hover {
+  color: var(--text);
+}
+
+.meta {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+}
+
+.category {
+  color: var(--accent);
+}
+
+.title {
+  font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.tagline {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-mid);
+  font-style: italic;
+  max-width: 36rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  margin-top: clamp(3.5rem, 7vw, 5.5rem);
+  padding-top: clamp(2.5rem, 5vw, 3.5rem);
+  border-top: 1px solid var(--border);
+}
+
+.heading {
+  font-size: 1.05rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.headingMark {
+  color: var(--accent);
+  margin-right: 0.5rem;
+}
+
+.description {
+  margin-top: 1.1rem;
+  color: var(--text-mid);
+  font-size: 1rem;
+  max-width: 40rem;
+}
+
+.stackCard {
+  align-self: start;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.stackLabel {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.stackList {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.stackItem {
+  display: flex;
+  gap: 0.6rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.85rem;
+  color: var(--text-mid);
+}
+
+.stackArrow {
+  color: var(--text-dim);
+}
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: clamp(3.5rem, 7vw, 5.5rem);
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.pagerLink {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  transition: color 0.2s ease;
+}
+
+.pagerDir {
+  color: var(--accent);
+  margin-inline: 0.35rem;
+}
+
+.pagerNext {
+  text-align: right;
+}
+
+.pagerLink:hover {
+  color: var(--text);
+}
+
+@media (max-width: 760px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
